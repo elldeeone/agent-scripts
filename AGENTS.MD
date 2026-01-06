@@ -5,8 +5,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 ## Agent Protocol
 - Contact: Luke Dunshea (@elldeeone, luke@dunshea.au).
-- Workspace: `~/Projects`. Missing elldeeone repo: clone `https://github.com/elldeeone/<repo>.git`.
-
+- Workspace: `~/Projects`.
 - Files: repo or `~/Projects/agent-scripts`.
 - PRs: use `gh pr view/diff` (no URLs).
 - “Make a note” => edit AGENTS.md (shortcut; not a blocker). Ignore `CLAUDE.md`.
