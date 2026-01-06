@@ -1,18 +1,15 @@
 # AGENTS.MD
 
-Peter owns this. Start: say hi + 1 motivating line.
+Luke owns this. Start: say hi + 1 motivating line.
 Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 ## Agent Protocol
-- Contact: Peter Steinberger (@steipete, steipete@gmail.com).
-- Workspace: `~/Projects`. Missing steipete repo: clone `https://github.com/steipete/<repo>.git`.
-- 3rd-party/OSS (non-steipete): clone under `~/Projects/oss`.
-- `~/Projects/manager`: private ops (domains/DNS, redirects/workers, runbooks).
-- “MacBook” / “Mac Studio” => SSH there; find hosts/IPs via `tailscale status`.
+- Contact: Luke Dunshea (@elldeeone, luke@dunshea.au).
+- Workspace: `~/Projects`. Missing elldeeone repo: clone `https://github.com/elldeeone/<repo>.git`.
+
 - Files: repo or `~/Projects/agent-scripts`.
 - PRs: use `gh pr view/diff` (no URLs).
 - “Make a note” => edit AGENTS.md (shortcut; not a blocker). Ignore `CLAUDE.md`.
-- No `./runner`. Guardrails: use `trash` for deletes.
 - Need upstream file: stage in `/tmp/`, then cherry-pick; never overwrite tracked.
 - Bugs: add regression test when it fits.
 - Keep files <~500 LOC; split/refactor as needed.
@@ -23,8 +20,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Prefer end-to-end verify; if blocked, say what’s missing.
 - New deps: quick health check (recent releases/commits, adoption).
 - Slash cmds: `~/.codex/prompts/`.
-- Web: search early; quote exact errors; prefer 2024–2025 sources; fallback Firecrawl (`pnpm mcp:*`) / `mcporter`.
-- Oracle: run `npx -y @steipete/oracle --help` once/session before first use.
+- Web: search early; quote exact errors; prefer 2024–2026 sources; fallback Firecrawl (`pnpm mcp:*`) / `mcporter`.
 - Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
 
 ## Screenshots (“use a screenshot”)
@@ -35,18 +31,13 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Replace asset; keep dimensions; commit; run gate; verify CI.
 
 ## Important Locations
-- Blog repo: `~/Projects/steipete.me`
-- Notes/Runbooks: `~/Projects/manager/docs/` (e.g. `mac-studio.md`, `mac-vm.md`)
-- OpenAI/Codex limits tracking: `~/Documents/steipete/codex limits.md`
-- Obsidian vault: `$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/steipete-notes`
-- Sparkle keys: `~/Library/CloudStorage/Dropbox/Backup/Sparkle`
+- Blog repo: `~/Projects/dunshea_au`
 
 ## Docs
 - Start: run docs list (`docs:list` script, or `bin/docs-list` here if present; ignore if not installed); open docs before coding.
 - Follow links until domain makes sense; honor `Read when` hints.
 - Keep notes short; update docs when behavior/API changes (no ship w/o docs).
 - Add `read_when` hints on cross-cutting docs.
-- Model note (2025-11-23): no `gpt-5.1-pro` / `grok-4.1` on Peter’s keys yet.
 - Model preference: latest only. OK: Anthropic Opus 4.5 / Sonnet 4.5 (Sonnet 3.5 = old; avoid), OpenAI GPT-5.2, xAI Grok-4.1 Fast, Google Gemini 3 Flash.
 
 ## PR Feedback
@@ -64,7 +55,6 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - CI red: `gh run list/view`, rerun, fix, push, repeat til green.
 - Keep it observable (logs, panes, tails, MCP/browser tools).
 - Release: read `docs/RELEASING.md` (or find best checklist if missing).
-- Reminder: check `~/.profile` for missing env keys (e.g. `SPARKLE_PRIVATE_KEY_FILE`); Sparkle keys live in `~/Library/CloudStorage/Dropbox/Backup/Sparkle`.
 
 ## Git
 - Safe by default: `git status/diff/log`. Push only when user asks.
@@ -99,22 +89,6 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 Read `~/Projects/agent-scripts/tools.md` for the full tool catalog if it exists.
 
-### bird
-- X CLI: `~/Projects/bird/bird`. Cmds: `tweet`, `reply`, `read`, `thread`, `search`, `mentions`, `whoami`.
-- Uses Firefox cookies by default (`--firefox-profile` to switch).
-
-### sonoscli
-- Sonos CLI: `~/Projects/sonoscli/bin/sonos`. Cmds: `discover`, `status`, `play/pause/stop`, `volume set`, `group`.
-- SSDP can fail: use `--ip <speaker-ip>`.
-- Spotify SMAPI: `sonos smapi search --service "Spotify" --category tracks "query"`.
-
-### peekaboo
-- Screen tools: `~/Projects/Peekaboo`. Cmds: `capture`, `see`, `click`, `list`, `tools`, `permissions status`.
-- Needs Screen Recording + Accessibility. Docs: `~/Projects/Peekaboo/docs/commands/`.
-
-### sweetistics
-- X analytics app: `~/Projects/sweetistics`.
-
 ### committer
 - Commit helper (PATH). Stages only listed paths; required here. Repo may also ship `./scripts/committer`.
 
@@ -139,13 +113,6 @@ Read `~/Projects/agent-scripts/tools.md` for the full tool catalog if it exists.
 
 ### axe
 - Simulator automation CLI for describing UI (`axe describe-ui --udid …`), tapping (`axe tap --udid … -x … -y …`), typing, and hardware buttons. Use `axe list-simulators` to enumerate devices.
-
-### oracle
-- Bundle prompt+files for 2nd model. Use when stuck/buggy/review.
-- Run `npx -y @steipete/oracle --help` once/session (before first use).
-
-### mcporter / iterm / firecrawl / XcodeBuildMCP
-- MCP launcher: `npx mcporter <server>` (see `npx mcporter --help`). Common: `iterm`, `firecrawl`, `XcodeBuildMCP`.
 
 ### gh
 - GitHub CLI for PRs/CI/releases. Given issue/PR URL (or `/pull/5`): use `gh`, not web search.
